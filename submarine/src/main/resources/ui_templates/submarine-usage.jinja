@@ -39,7 +39,7 @@
     <b>Launch Standalone Tensorflow Application:</b>
     <pre>
 yarn jar path-to/hadoop-yarn-applications-submarine-3.2.0-SNAPSHOT.jar job run \
-  --env DOCKER_JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/ \
+  --env DOCKER_JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/jre/ \
   --env DOCKER_HADOOP_HDFS_HOME=/hadoop-3.1.0 --name tf-job-001 \
   --docker_image <your-docker-image> \
   --input_path hdfs://default/dataset/cifar-10-data  \
@@ -56,7 +56,7 @@ yarn jar hadoop-yarn-applications-submarine-${version}.jar job run \
  --name tf-job-001 --docker_image <your docker image> \
  --input_path hdfs://default/dataset/cifar-10-data \
  --checkpoint_path hdfs://default/tmp/cifar-10-jobdir \
- --env DOCKER_JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/ \
+ --env DOCKER_JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/jre/ \
  --env DOCKER_HADOOP_HDFS_HOME=/hadoop-3.1.0 \
  --num_workers 2 \
  --worker_resources memory=8G,vcores=2,gpu=1 --worker_launch_cmd "cmd for worker ..." \

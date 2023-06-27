@@ -14,8 +14,8 @@
 # limitations under the License.
 FROM centos:centos7
 
-ENV SPARK_PROFILE 2.4
-ENV SPARK_VERSION 2.4.8
+ENV SPARK_PROFILE 3.3
+ENV SPARK_VERSION 3.3.2
 ENV HADOOP_PROFILE 2.7
 ENV SPARK_HOME /usr/local/spark
 

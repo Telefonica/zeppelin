@@ -65,7 +65,7 @@ RUN tar zxf hadoop-${HADOOP_VERSION}.tar.gz
 RUN ln -s hadoop-${HADOOP_VERSION} hadoop-current
 RUN rm hadoop-${HADOOP_VERSION}.tar.gz
 
-ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 RUN echo "$LOG_TAG Install java8" && \
   apt-get -y update && \
   apt-get install -y openjdk-8-jdk && \

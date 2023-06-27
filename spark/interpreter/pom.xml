@@ -35,20 +35,20 @@
   <properties>
     <interpreter.name>spark</interpreter.name>
     <!--library versions-->
-    <maven.plugin.api.version>3.0</maven.plugin.api.version>
-    <aether.version>1.12</aether.version>
+    <maven.plugin.api.version>3.0</maven.plugin.api.version> <!-- java -->
+    <aether.version>1.12</aether.version> <!-- java -->
     <maven.aeither.provider.version>3.0.3</maven.aeither.provider.version>
-    <wagon.version>2.7</wagon.version>
+    <wagon.version>2.7</wagon.version> <!-- java -->
 
     <datanucleus.rdbms.version>3.2.9</datanucleus.rdbms.version>
     <datanucleus.apijdo.version>3.2.6</datanucleus.apijdo.version>
     <datanucleus.core.version>3.2.10</datanucleus.core.version>
 
     <!-- spark versions -->
-    <spark.version>3.1.2</spark.version>
-    <protobuf.version>2.5.0</protobuf.version>
-    <py4j.version>0.10.9</py4j.version>
-    <spark.scala.version>2.12.7</spark.scala.version>
+    <spark.version>3.3.2</spark.version> <!-- scala -->
+    <protobuf.version>2.5.0</protobuf.version> <!-- C/C++/C# -->
+    <py4j.version>0.10.9</py4j.version> <!-- java -->
+    <spark.scala.version>2.12.15</spark.scala.version>
     <spark.scala.binary.version>2.12</spark.scala.binary.version>
 
     <spark.archive>spark-${spark.version}</spark.archive>
@@ -63,6 +63,9 @@
     <!-- settings -->
     <pyspark.test.exclude>**/PySparkInterpreterMatplotlibTest.java</pyspark.test.exclude>
     <pyspark.test.include>**/*Test.*</pyspark.test.include>
+
+    <conurrentunit.version>0.4.4</conurrentunit.version>
+    <unirest-java.version>1.4.9</unirest-java.version>
   </properties>
 
   <dependencies>
@@ -72,11 +75,13 @@
       <version>${project.version}</version>
     </dependency>
 
+    <!--
     <dependency>
       <groupId>org.apache.zeppelin</groupId>
       <artifactId>spark2-shims</artifactId>
       <version>${project.version}</version>
     </dependency>
+    -->
 
     <dependency>
       <groupId>org.apache.zeppelin</groupId>
@@ -300,14 +305,14 @@
     <dependency>
       <groupId>net.jodah</groupId>
       <artifactId>concurrentunit</artifactId>
-      <version>0.4.4</version>
+      <version>${conurrentunit.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>com.mashape.unirest</groupId>
       <artifactId>unirest-java</artifactId>
-      <version>1.4.9</version>
+      <version>${unirest-java.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -504,7 +509,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <spark.scala.version>2.12.7</spark.scala.version>
+        <spark.scala.version>2.12.15</spark.scala.version>
         <spark.scala.binary.version>2.12</spark.scala.binary.version>
       </properties>
     </profile>
@@ -528,7 +533,7 @@
         <datanucleus.core.version>4.1.17</datanucleus.core.version>
         <datanucleus.rdbms.version>4.1.19</datanucleus.rdbms.version>
         <datanucleus.apijdo.version>4.2.4</datanucleus.apijdo.version>
-        <spark.version>3.3.0</spark.version>
+        <spark.version>3.3.2</spark.version>
         <protobuf.version>2.5.0</protobuf.version>
         <py4j.version>0.10.9.5</py4j.version>
       </properties>

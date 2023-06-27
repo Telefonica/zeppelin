@@ -62,32 +62,32 @@
     <module>zeppelin-jupyter-interpreter</module>
     <module>zeppelin-jupyter-interpreter-shaded</module>
     <module>kotlin</module>
-    <module>groovy</module>
+    <!--<module>groovy</module>-->
     <module>spark</module>
-    <module>spark-submit</module>
-    <module>submarine</module>
+    <!--<module>spark-submit</module>-->
+    <!--<module>submarine</module>-->
     <module>markdown</module>
-    <module>mongodb</module>
+    <!--<module>mongodb</module>-->
     <module>angular</module>
     <module>shell</module>
-    <module>livy</module>
-    <module>hbase</module>
-    <module>jdbc</module>
-    <module>file</module>
-    <module>flink</module>
-    <module>flink-cmd</module>
-    <module>influxdb</module>
+    <!--<module>livy</module>-->
+    <!--<module>hbase</module>-->
+    <!--<module>jdbc</module>-->
+    <!--<module>file</module>-->
+    <!--<module>flink</module>-->
+    <!--<module>flink-cmd</module>-->
+    <!--<module>influxdb</module>-->
     <module>python</module>
-    <module>cassandra</module>
-    <module>elasticsearch</module>
-    <module>bigquery</module>
-    <module>alluxio</module>
-    <module>neo4j</module>
-    <module>java</module>
-    <module>sparql</module>
+    <!--<module>cassandra</module>-->
+    <!--<module>elasticsearch</module>-->
+    <!--<module>bigquery</module>-->
+    <!--<module>alluxio</module>-->
+    <!--<module>neo4j</module>-->
+    <!--<module>java</module>-->
+    <!--<module>sparql</module>-->
     <module>zeppelin-common</module>
-    <module>zeppelin-client</module>
-    <module>zeppelin-client-examples</module>
+    <!--<module>zeppelin-client</module>-->
+    <!--<module>zeppelin-client-examples</module>-->
     <module>zeppelin-web</module>
     <module>zeppelin-server</module>
     <module>zeppelin-jupyter</module>
@@ -103,12 +103,12 @@
     <!-- These two lines could be changed like `maven.compiler.release` after updating JDK11 -->
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <scala.version>${scala.2.11.version}</scala.version>
+    <scala.version>${scala.2.12.version}</scala.version>
     <scala.binary.version>2.11</scala.binary.version>
     <scala.2.11.version>2.11.12</scala.2.11.version>
-    <scala.2.12.version>2.12.16</scala.2.12.version>
-    <scalatest.version>3.0.7</scalatest.version>
-    <scalacheck.version>1.12.5</scalacheck.version>
+    <scala.2.12.version>2.12.15</scala.2.12.version>
+    <scalatest.version>3.0.7</scalatest.version> <!-- scala -->
+    <scalacheck.version>1.12.5</scalacheck.version> <!-- scala -->
 
     <!-- frontend maven plugin related versions-->
     <node.version>v12.3.1</node.version>
@@ -145,7 +145,8 @@
     <hadoop3.0.version>3.0.3</hadoop3.0.version>
     <hadoop3.1.version>3.1.3</hadoop3.1.version>
     <hadoop3.2.version>3.2.0</hadoop3.2.version>
-    <hadoop.version>${hadoop2.7.version}</hadoop.version>
+    <hadoop3.3.version>3.3.0</hadoop3.3.version>
+    <hadoop.version>${hadoop3.3.version}</hadoop.version>
     <hadoop.deps.scope>provided</hadoop.deps.scope>
     <hadoop-client-api.artifact>hadoop-client</hadoop-client-api.artifact>
     <hadoop-client-runtime.artifact>hadoop-yarn-api</hadoop-client-runtime.artifact>
@@ -1722,6 +1723,7 @@
         <scala.binary.version>2.11</scala.binary.version>
       </properties>
     </profile>
+
     <profile>
       <id>scala-2.12</id>
       <properties>

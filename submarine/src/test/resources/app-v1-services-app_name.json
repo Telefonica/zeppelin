@@ -59,7 +59,7 @@
         "env":{
           "_TASK_TYPE":"TENSORBOARD",
           "_TASK_INDEX":"${COMPONENT_ID}",
-          "DOCKER_JAVA_HOME":"/usr/lib/jvm/java-8-openjdk-amd64/jre",
+          "DOCKER_JAVA_HOME":"/usr/lib/jvm/java-11-openjdk-amd64/jre",
           "TZ":"Asia/Shanghai",
           "YARN_CONTAINER_RUNTIME_DOCKER_CONTAINER_NETWORK":"bridge",
           "DOCKER_HADOOP_HDFS_HOME":"/hadoop-current",
@@ -120,7 +120,7 @@
 
     },
     "env":{
-      "DOCKER_JAVA_HOME":"/usr/lib/jvm/java-8-openjdk-amd64/jre",
+      "DOCKER_JAVA_HOME":"/usr/lib/jvm/java-11-openjdk-amd64/jre",
       "TZ":"Asia/Shanghai",
       "YARN_CONTAINER_RUNTIME_DOCKER_CONTAINER_NETWORK":"bridge",
       "DOCKER_HADOOP_HDFS_HOME":"/hadoop-current",

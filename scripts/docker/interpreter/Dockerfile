@@ -16,7 +16,7 @@
 FROM apache/zeppelin:0.8.0
 MAINTAINER Apache Software Foundation <dev@zeppelin.apache.org>
 
-ENV SPARK_VERSION=2.3.3
+ENV SPARK_VERSION=3.3.2
 ENV HADOOP_VERSION=2.7
 
 # support Kerberos certification

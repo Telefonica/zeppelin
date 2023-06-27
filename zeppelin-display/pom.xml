@@ -55,6 +55,10 @@
     </dependencies>
   </dependencyManagement>
 
+  <properties>
+    <scala-lang.modules.version>1.1.0</scala-lang.modules.version> <!-- scala -->
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -66,6 +70,12 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.scala-lang.modules</groupId>
+      <artifactId>scala-xml_${scala.binary.version}</artifactId>
+      <version>${scala-lang.modules.version}</version>
     </dependency>
 
     <dependency>
@@ -136,6 +146,7 @@
             <arg>-deprecation</arg>
             <arg>-feature</arg>
             <arg>-language:implicitConversions</arg>
+            <arg>-nobootcp</arg>
           </args>
           <jvmArgs>
             <jvmArg>-Xms1024m</jvmArg>

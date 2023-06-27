@@ -282,6 +282,7 @@
       </properties>
     </profile>
     <!-- Include some test dependencies depending on the spark-scala profile -->
+    <!--
     <profile>
       <id>spark-scala-2.13</id>
       <dependencies>
@@ -293,6 +294,7 @@
         </dependency>
       </dependencies>
     </profile>
+    -->
 
     <profile>
       <id>spark-scala-2.12</id>
@@ -306,6 +308,7 @@
       </dependencies>
     </profile>
 
+    <!--
     <profile>
       <id>spark-scala-2.11</id>
       <dependencies>
@@ -317,6 +320,7 @@
         </dependency>
       </dependencies>
     </profile>
+    -->
   </profiles>
 
 </project>
