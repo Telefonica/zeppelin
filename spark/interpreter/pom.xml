@@ -35,19 +35,19 @@
   <properties>
     <interpreter.name>spark</interpreter.name>
     <!--library versions-->
-    <maven.plugin.api.version>3.0</maven.plugin.api.version> <!-- java -->
-    <aether.version>1.12</aether.version> <!-- java -->
+    <maven.plugin.api.version>3.0</maven.plugin.api.version>
+    <aether.version>1.12</aether.version>
     <maven.aeither.provider.version>3.0.3</maven.aeither.provider.version>
-    <wagon.version>2.7</wagon.version> <!-- java -->
+    <wagon.version>2.7</wagon.version>
 
     <datanucleus.rdbms.version>3.2.9</datanucleus.rdbms.version>
     <datanucleus.apijdo.version>3.2.6</datanucleus.apijdo.version>
     <datanucleus.core.version>3.2.10</datanucleus.core.version>
 
     <!-- spark versions -->
-    <spark.version>3.3.2</spark.version> <!-- scala -->
-    <protobuf.version>2.5.0</protobuf.version> <!-- C/C++/C# -->
-    <py4j.version>0.10.9</py4j.version> <!-- java -->
+    <spark.version>3.3.2</spark.version>
+    <protobuf.version>2.5.0</protobuf.version>
+    <py4j.version>0.10.9</py4j.version>
     <spark.scala.version>2.12.15</spark.scala.version>
     <spark.scala.binary.version>2.12</spark.scala.binary.version>
 
