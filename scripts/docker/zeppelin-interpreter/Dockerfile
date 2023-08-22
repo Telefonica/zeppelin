@@ -27,7 +27,7 @@ ENV VERSION="${version}" \
 
 RUN set -ex && \
     apt-get -y update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-8-jre-headless wget tini && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-11-jre-headless wget tini && \
     # Cleanup
     rm -rf /var/lib/apt/lists/* && \
     apt-get autoclean && \
