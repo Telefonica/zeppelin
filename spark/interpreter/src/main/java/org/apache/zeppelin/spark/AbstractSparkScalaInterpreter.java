@@ -229,6 +229,9 @@ public abstract class AbstractSparkScalaInterpreter {
     scalaInterpretQuietly("import sqlContext.implicits._");
     scalaInterpretQuietly("import spark.sql");
     scalaInterpretQuietly("import org.apache.spark.sql.functions._");
+    scalaInterpretQuietly("import com.telefonica.baikal.datasets.implicits.Implicits._");
+    scalaInterpretQuietly("import com.telefonica.baikal.datasets.model._");
+    scalaInterpretQuietly("import org.apache.spark.sql._");
     // print empty string otherwise the last statement's output of this method
     // (aka. import org.apache.spark.sql.functions._) will mix with the output of user code
     scalaInterpretQuietly("print(\"\")");
