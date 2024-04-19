@@ -234,9 +234,14 @@ public abstract class AbstractSparkScalaInterpreter {
     try {
       scalaInterpretQuietly("import com.telefonica.baikal.baikonur.annotations._");
       scalaInterpretQuietly("import com.telefonica.baikal.baikonur.implicits.audit.Implicits._");
+      scalaInterpretQuietly("import com.telefonica.baikal.baikonur.implicits.dimensionalEntities.Implicits._");
+      scalaInterpretQuietly("import com.telefonica.baikal.baikonur.implicits.general.Implicits._");
       scalaInterpretQuietly("import com.telefonica.baikal.baikonur.implicits.dataset.Implicits._");
       scalaInterpretQuietly("import com.telefonica.baikal.baikonur.implicits.spark.Implicits._");
       scalaInterpretQuietly("import com.telefonica.baikal.baikonur.model.audit._");
+      scalaInterpretQuietly("import com.telefonica.baikal.baikonur.model.dimensionalEntities._");
+      scalaInterpretQuietly("import com.telefonica.baikal.baikonur.model.general._");
+      scalaInterpretQuietly("import com.telefonica.baikal.baikonur.utils.DateFormatters._");
     } catch (Exception e) {
       LOGGER.warn("Error importing Baikonur classes");
     }
