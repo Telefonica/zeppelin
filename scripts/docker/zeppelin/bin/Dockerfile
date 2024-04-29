@@ -13,24 +13,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+FROM baikalpublicimages.azurecr.io/apache/zeppelin:0.11.0-SNAPSHOT as zeppelin-build
 FROM ubuntu:20.04
 
 LABEL maintainer="Apache Software Foundation <dev@zeppelin.apache.org>"
 
-ENV Z_VERSION="0.10.0"
+ENV Z_VERSION="0.11.0-SNAPSHOT"
 
 ENV LOG_TAG="[ZEPPELIN_${Z_VERSION}]:" \
     ZEPPELIN_HOME="/opt/zeppelin" \
     HOME="/opt/zeppelin" \
     LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
-    JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 \
+    JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 \
     ZEPPELIN_ADDR="0.0.0.0"
 
 RUN echo "$LOG_TAG install basic packages" && \
     apt-get -y update && \
     # Switch back to install JRE instead of JDK when moving to JDK9 or later.
-    DEBIAN_FRONTEND=noninteractive apt-get install -y locales language-pack-en tini openjdk-8-jdk-headless wget unzip && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y locales language-pack-en tini openjdk-11-jdk-headless wget unzip && \
     # Cleanup
     rm -rf /var/lib/apt/lists/* && \
     apt-get autoclean && \
@@ -63,11 +64,9 @@ RUN set -ex && \
     # chmod -R ug+rwX /opt/conda
 ENV PATH /opt/conda/envs/python_3_with_R/bin:/opt/conda/bin:$PATH
 
+COPY --from=zeppelin-build /opt/zeppelin ${ZEPPELIN_HOME}
+
 RUN echo "$LOG_TAG Download Zeppelin binary" && \
-    mkdir -p ${ZEPPELIN_HOME} && \
-    wget -nv -O /tmp/zeppelin-${Z_VERSION}-bin-all.tgz https://archive.apache.org/dist/zeppelin/zeppelin-${Z_VERSION}/zeppelin-${Z_VERSION}-bin-all.tgz && \
-    tar --strip-components=1 -zxvf  /tmp/zeppelin-${Z_VERSION}-bin-all.tgz -C ${ZEPPELIN_HOME} && \
-    rm -f /tmp/zeppelin-${Z_VERSION}-bin-all.tgz && \
     chown -R root:root ${ZEPPELIN_HOME} && \
     mkdir -p ${ZEPPELIN_HOME}/logs ${ZEPPELIN_HOME}/run ${ZEPPELIN_HOME}/webapps && \
     # Allow process to edit /etc/passwd, to create a user entry for zeppelin

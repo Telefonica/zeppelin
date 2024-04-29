@@ -30,7 +30,7 @@ LABEL maintainer="Apache Software Foundation <dev@zeppelin.apache.org>"
 RUN set -ex && \
     apt-get -y update && \
     # Install language and other base packages
-    DEBIAN_FRONTEND=noninteractive apt-get install -y language-pack-en openjdk-8-jre-headless tini wget && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y language-pack-en openjdk-11-jre-headless tini wget && \
     # Cleanup
     rm -rf /var/lib/apt/lists/* && \
     apt-get autoclean && \
@@ -40,7 +40,7 @@ ARG version="0.10.0"
 
 ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
-    JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 \
+    JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 \
     VERSION="${version}" \
     HOME="/opt/zeppelin" \
     ZEPPELIN_HOME="/opt/zeppelin" \
